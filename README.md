@@ -1,4 +1,4 @@
-# rpi-influxdb [![Build Status](https://travis-ci.org/tanmaniac/odroid-c2-influxdb.svg?branch=master)](https://travis-ci.org/tanmaniac/odroid-c2-influxdb) [![This image on DockerHub](https://img.shields.io/docker/pulls/tanmaniac/odroid-c2-influxdb.svg)](https://hub.docker.com/r/tanmaniac/odroid-c2-influxdb/)
+# odroid-c2-influxdb [![Build Status](https://travis-ci.com/tanmaniac/odroid-c2-influxdb.svg?branch=master)](https://travis-ci.com/tanmaniac/odroid-c2-influxdb) [![This image on DockerHub](https://img.shields.io/docker/pulls/tanmaniac/odroid-c2-influxdb.svg)](https://hub.docker.com/r/tanmaniac/odroid-c2-influxdb/)
 
 Odroid C2 compatible Docker base image with InfluxDB, an open source database written in Go specifically to handle time series data with high availability and high performance requirements. This project differs from hypriot's in that it uses an `arm64v8` base image instead of Raspbian.
 
