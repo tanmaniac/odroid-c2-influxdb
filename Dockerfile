@@ -1,5 +1,5 @@
 # Pull base image
-FROM arm64v8/ubuntu:18.04
+FROM multiarch/ubuntu-core:arm64-xenial
 MAINTAINER Tanmay Bangalore <tanmaybangalore@gmail.com>
 
 # Setup external package-sources
