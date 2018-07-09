@@ -1,12 +1,12 @@
-# rpi-influxdb [![Build Status](https://travis-ci.org/hypriot/rpi-influxdb.svg?branch=master)](https://travis-ci.org/hypriot/rpi-influxdb) [![This image on DockerHub](https://img.shields.io/docker/pulls/hypriot/rpi-influxdb.svg)](https://hub.docker.com/r/hypriot/rpi-influxdb/)
+# rpi-influxdb [![Build Status](https://travis-ci.org/tanmaniac/odroid-c2-influxdb.svg?branch=master)](https://travis-ci.org/tanmaniac/odroid-c2-influxdb) [![This image on DockerHub](https://img.shields.io/docker/pulls/tanmaniac/odroid-c2-influxdb.svg)](https://hub.docker.com/r/tanmaniac/odroid-c2-influxdb/)
 
-Raspberry Pi compatible Docker base image with InfluxDB, an open source database written in Go specifically to handle time series data with high availability and high performance requirements.
+Odroid C2 compatible Docker base image with InfluxDB, an open source database written in Go specifically to handle time series data with high availability and high performance requirements. This project differs from hypriot's in that it uses an `arm64v8` base image instead of Raspbian.
 
 ### Build Details
-- [Source Project Page](https://github.com/hypriot)
-- [Source Repository](https://github.com/hypriot/rpi-influxdb)
-- [Dockerfile](https://github.com/hypriot/rpi-influxdb/blob/master/Dockerfile)
-- [DockerHub](https://registry.hub.docker.com/u/hypriot/rpi-influxdb/)
+- [Source Project Page](https://github.com/tanmaniac)
+- [Source Repository](https://github.com/tanmaniac/odroid-c2-influxdb)
+- [Dockerfile](https://github.com/tanmaniac/odroid-c2-influxdb/blob/master/Dockerfile)
+- [DockerHub](https://registry.hub.docker.com/u/tanmaniac/odroid-c2-influxdb/)
 
 #### Build the Docker Image
 ```bash
@@ -31,11 +31,11 @@ Running your InfluxDB image
 
 Start your image binding the external port `8086` of your containers:
 
-    docker run -d -p 8086:8086 hypriot/rpi-influxdb
+    docker run -d -p 8086:8086 tanmaniac/odroid-c2-influxdb
 
 Docker containers are easy to delete. If you are serious about keeping InfluxDB data persistently, then consider adding a volume mapping to the containers `/data` folder:
 
-    docker run -d --volume=/var/influxdb:/data -p 8086:8086 hypriot/rpi-influxdb
+    docker run -d --volume=/var/influxdb:/data -p 8086:8086 tanmaniac/odroid-c2-influxdb
 
 Configuring your InfluxDB
 -------------------------
@@ -54,7 +54,7 @@ Initially create Database
 -------------------------
 Use `-e PRE_CREATE_DB="db1;db2;db3"` to create database named "db1", "db2", and "db3" on the first time the container starts automatically. Each database name is separated by `;`. For example:
 
-```docker run -d -p 8086:8086 -e ADMIN_USER="root" -e INFLUXDB_INIT_PWD="somepassword" -e PRE_CREATE_DB="db1;db2;db3" hypriot/rpi-influxdb:latest```
+```docker run -d -p 8086:8086 -e ADMIN_USER="root" -e INFLUXDB_INIT_PWD="somepassword" -e PRE_CREATE_DB="db1;db2;db3" tanmaniac/odroid-c2-influxdb:latest```
 
 Alternatively, create a database and user with the InfluxDB 1.2 shell:
 
